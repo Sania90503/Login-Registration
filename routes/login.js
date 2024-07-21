@@ -9,7 +9,13 @@ const {
 const { dashboardView } = require("../controllers/dashboardController");
 const { protectRoute } = require("../auth/protect");
 
+
 const router = express.Router();
+
+//Root URL redirect to login
+router.get('/', (req,res)=>{
+  res.redirect("/login");
+});
 
 router.get("/register", registerView);
 router.get("/login", loginView);
